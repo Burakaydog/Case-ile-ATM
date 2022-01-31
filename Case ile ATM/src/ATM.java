@@ -2,73 +2,75 @@ import java.util.Scanner;
 public class ATM {
 public static void main(String[] args){
 	Scanner scan = new Scanner(System.in);
-	System.out.println("Yapılcak işlemi seçiniz: parayükleme,paraçekme,paragörünteleme,paragönderme");
+	System.out.println("YapÄ±lcak iÅŸlemi seÃ§iniz: parayÃ¼kleme,paraÃ§ekme,paragÃ¶rÃ¼nteleme,paragÃ¶nderme");
     String x = scan.nextLine();
     int py;
     int py2;
-    int hesapnumara;
+    String hesapnumara;
     int bakiye = 5850;
     switch(x)
     {
-    case "parayükleme":
-    	System.out.println("Yüklencek tutarı giriniz");
+    case "parayÃ¼kleme":
+        System.out.println("Para yÃ¼klenicek hesabÄ±n adÄ±nÄ± giriniz");
+        hesapnumara = scan.nextLine();
+    	System.out.println("YÃ¼klencek tutarÄ± giriniz");
     	py = scan.nextInt();
     	{
-    	System.out.println("Hesabınıza" + " " + py + " " + "TL yüklenecektir Onaylamak için 1'i, iptal etmek için 2yi tuşlayın");
+    	System.out.println(hesapnumara  +"  " +  AdlÄ± "HesabÄ±nÄ±za" + " " + py + " " + "TL yÃ¼klenecektir Onaylamak iÃ§in 1'i, iptal etmek iÃ§in 2yi tuÅŸlayÄ±n");
     	py2 = scan.nextInt();
     	if(py2 == 1)
     	{
-    		System.out.println("Hesabınıza" + " " + py + " " + "TL yüklenilmiştir" );
+    		System.out.println("HesabÄ±nÄ±za" + " " + py + " " + "TL yÃ¼klenilmiÅŸtir" );
     	}
     	if(py2 == 2)
     	{
-    		System.out.println("Yükleme iptal edildi");
+    		System.out.println("YÃ¼kleme iptal edildi");
     	}
     	}
     	break;
-    case "paraçekme":
-    	System.out.println("Çekilecek tutarı giriniz");
+    case "paraÃ§ekme":
+    	System.out.println("Ã‡ekilecek tutarÄ± giriniz");
     	py = scan.nextInt();
     	if(py >= bakiye)
     	{
     		System.out.println("Yetersiz bakiye");
     	}
     	else{
-    	System.out.println("Hesabınızdan" + " " + py + " " + "TL Çekilcektir Onaylamak için 1'i, iptal etmek için 2yi tuşlayın");
+    	System.out.println("HesabÄ±nÄ±zdan" + " " + py + " " + "TL Ã‡ekilcektir Onaylamak iÃ§in 1'i, iptal etmek iÃ§in 2yi tuÅŸlayÄ±n");
     	py2 = scan.nextInt();
     	
     	if(py2 == 1)
     	{
-    		System.out.println("Hesabınızdan" + " " + py + " " + "TL Çekilmiştir" );
+    		System.out.println("HesabÄ±nÄ±zdan" + " " + py + " " + "TL Ã‡ekilmiÅŸtir" );
     	}
     	if(py2 == 2)
     	{
-    		System.out.println("Çekim iptal edildi");
+    		System.out.println("Ã‡ekim iptal edildi");
     	}
     	}
     	break;
-    case "paragörüntüleme":
-    	System.out.println("Hesabınızda toplam" + " " + bakiye + " " + "TL vardır" );
+    case "paragÃ¶rÃ¼ntÃ¼leme":
+    	System.out.println("HesabÄ±nÄ±zda toplam" + " " + bakiye + " " + "TL vardÄ±r" );
     	break;
-    case "paragönderme":
-    	System.out.println("Para gönderilcek hesabın numarasını giriniz:");
-    	hesapnumara = scan.nextInt();
-        System.out.println("Gönderilcek tutarı giriniz:");
+    case "paragÃ¶nderme":
+    	System.out.println("Para gÃ¶nderilcek hesabÄ±n adÄ±nÄ± giriniz:");
+    	hesapnumara = scan.nextLine();
+        System.out.println("GÃ¶nderilcek tutarÄ± giriniz:");
         py = scan.nextInt();
         if(py >= bakiye)
         {
         System.out.println("yetersiz bakiye");
         }
         else{
-        System.out.println(hesapnumara + " " + "numaralı hesaba" + " " + py + " " + "TL yüklenecektir Onaylamak için 1'i, iptal etmek için 2yi tuşlayın"  );
+        System.out.println(hesapnumara + " " + "AdlÄ±  hesaba" + " " + py + " " + "TL yÃ¼klenecektir Onaylamak iÃ§in 1'i, iptal etmek iÃ§in 2yi tuÅŸlayÄ±n"  );
         py2 = scan.nextInt();
         if (py2 == 1)
         {
-        System.out.println(hesapnumara + " " + "numaralı hesaba" + " " + py + " " + "TL yüklenmiştir");
+        System.out.println(hesapnumara + " " + "AdlÄ± hesaba" + " " + py + " " + "TL yÃ¼klenmiÅŸtir");
         }
         if(py2 == 2)
         {
-        	System.out.println("İşlem iptal edilmiştir");
+        	System.out.println("Ä°ÅŸlem iptal edilmiÅŸtir");
         }
         }
         break;
